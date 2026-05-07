@@ -7,6 +7,7 @@ interface Category {
 }
 
 const CATEGORIES: Category[] = [
+  { id: 'agent', name: 'AI Agent赋能', label: 'Agent Cases' },
   { id: 'tvc', name: 'TVC', label: 'Commercial Works' },
   { id: 'bq', name: 'AI千川背景替换', label: 'BG Replacement' },
   { id: 'storyboard', name: '店播分镜素材', label: 'Storyboard Assets' },
@@ -18,7 +19,7 @@ const CATEGORIES: Category[] = [
 export default function CategoryNav({ onSelect, activeCategory }: { onSelect: (id: string) => void, activeCategory: string }) {
   return (
     <section className="py-20 px-[5vw] border-b border-white/5">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {CATEGORIES.map((cat) => (
           <motion.button
             key={cat.id}
