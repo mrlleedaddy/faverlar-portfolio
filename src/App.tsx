@@ -81,27 +81,6 @@ function LazyVideo({ src, className, delay = 0 }: { src: string; className?: str
 }
 
 const WORK_DATA = {
-  agent: [
-    {
-      title: "库存智能助手",
-      subtitle: "OpenClaw + 飞书表格",
-      description: "为采购每天节省55分钟，领导查询从5-10分钟降至10秒",
-      metrics: [
-        { label: "公式更新", value: "46个", unit: "自动完成" },
-        { label: "查询提效", value: "30-60x", unit: "倍提升" },
-        { label: "月省时间", value: "24", unit: "小时" },
-        { label: "ROI", value: "∞", unit: "零工具成本" }
-      ],
-      features: [
-        { icon: "⚡", title: "自动更新公式", desc: "读取6个仓库日更表，批量更新223个跨表引用公式" },
-        { icon: "🔍", title: "智能查询", desc: "支持精确查询、跨仓对比、汇总计算、条件筛选4种方式" },
-        { icon: "📊", title: "库存测算", desc: "可卖天数、直播备货、补货建议3种测算类型" }
-      ],
-      caseUrl: "https://github.com/mrlleedaddy/faverlar-portfolio/blob/main/Agent%E6%A1%88%E4%BE%8B1_%E5%BA%93%E5%AD%98%E6%99%BA%E8%83%BD%E5%8A%A9%E6%89%8B.md",
-      layout: "hero",
-      type: "case"
-    }
-  ],
   tvc: [
     {
       title: "SCULPTURAL\nFORMS",
@@ -192,6 +171,26 @@ const WORK_DATA = {
       layout: "left",
       size: "landscape",
       titlePos: "left-float"
+    }
+  ],
+  agent: [
+    {
+      title: "库存智能助手",
+      subtitle: "OpenClaw + 飞书表格",
+      description: "为采购每天节省55分钟，领导查询从5-10分钟降至10秒",
+      metrics: [
+        { label: "公式更新", value: "46个", unit: "自动完成" },
+        { label: "查询提效", value: "30-60x", unit: "倍提升" },
+        { label: "月省时间", value: "24", unit: "小时" },
+        { label: "ROI", value: "∞", unit: "零工具成本" }
+      ],
+      features: [
+        { icon: "⚡", title: "自动更新公式", desc: "读取6个仓库日更表，批量更新223个跨表引用公式" },
+        { icon: "🔍", title: "智能查询", desc: "支持精确查询、跨仓对比、汇总计算、条件筛选4种方式" },
+        { icon: "📊", title: "库存测算", desc: "可卖天数、直播备货、补货建议3种测算类型" }
+      ],
+      layout: "hero",
+      type: "case"
     }
   ],
   bq: [
@@ -629,7 +628,7 @@ export default function App() {
 
   const handleCategorySelect = (id: string) => {
     setActiveCategory(id);
-    setActiveSubTab(id === 'imitation' ? 'case1' : id === 'fission' ? 'pipeline' : id === 'agent' ? 'inventory' : 'assets');
+    setActiveSubTab(id === 'imitation' ? 'case1' : id === 'fission' ? 'pipeline' : 'assets');
     setViewMode('gallery');
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
@@ -768,21 +767,6 @@ export default function App() {
                                   <p className="text-sm text-white/50">{f.desc}</p>
                                 </div>
                               ))}
-                            </div>
-
-                            {/* CTA */}
-                            <div className="text-center pt-8">
-                              <a
-                                href={work.caseUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 px-8 py-4 border border-accent/50 hover:bg-accent/10 transition-all group"
-                              >
-                                <span className="text-sm uppercase tracking-widest">查看完整案例文档</span>
-                                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                </svg>
-                              </a>
                             </div>
                           </div>
                         ))}

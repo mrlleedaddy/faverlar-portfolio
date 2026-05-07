@@ -7,8 +7,8 @@ interface Category {
 }
 
 const CATEGORIES: Category[] = [
-  { id: 'agent', name: 'AI Agent赋能', label: 'Agent Cases' },
   { id: 'tvc', name: 'TVC', label: 'Commercial Works' },
+  { id: 'agent', name: 'AI案例', label: 'Agent Cases' },
   { id: 'bq', name: 'AI千川背景替换', label: 'BG Replacement' },
   { id: 'storyboard', name: '店播分镜素材', label: 'Storyboard Assets' },
   { id: 'imitation', name: '千川素材模仿', label: 'Imitation' },
